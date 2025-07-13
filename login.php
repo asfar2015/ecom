@@ -46,7 +46,7 @@
                 <button type="submit" class="btn btn-primary w-100 py-2 mt-2">Login</button>
             </form>
             <div class="mt-3 text-center">
-                <a href="register.html" class="text-decoration-none">Don't have an account? <span class="fw-semibold text-primary">Register</span></a>
+                <a href="register.php" class="text-decoration-none">Don't have an account? <span class="fw-semibold text-primary">Register</span></a>
             </div>
         </div>
     </div>

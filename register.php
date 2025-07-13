@@ -56,7 +56,7 @@
                 <button type="submit" class="btn btn-success w-100 py-2 mt-2">Register</button>
             </form>
             <div class="mt-3 text-center">
-                <a href="login.html" class="text-decoration-none">Already have an account? <span class="fw-semibold text-success">Login</span></a>
+                <a href="login.php" class="text-decoration-none">Already have an account? <span class="fw-semibold text-success">Login</span></a>
             </div>
         </div>
     </div>
