@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-Commerce Home</title>
-    <?php include "./includes/header.php"?>
+    <?php include "./includes/header.php" ?>
     <style>
         body {
             background: linear-gradient(135deg, #f8fafc 0%, #e0eafc 100%);
@@ -35,7 +35,7 @@
 </head>
 <body>
     <!-- Navbar -->
-    <?php include "./includes/navbar.php"?>
+    <?php include "./includes/navbar.php" ?>
 
     <!-- Hero Section -->
     <div class="container my-5">
@@ -97,8 +97,6 @@
     </div>
 
     <!-- Footer -->
-    <?php include "./includes/footer.php"?>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <?php include "./includes/footer.php" ?>
 </body>
 </html> 
