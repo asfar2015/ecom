@@ -1,3 +1,38 @@
+<?php
+require_once "./config.php";
+session_start();
+
+if (isset($_POST['submit'])) {
+    $product_name = $_POST['productName'];
+    $product_price = $_POST['productPrice'];
+    $username = $_SESSION['username'] ?? 1;
+
+    $image = $_FILES['productImage'];
+    $image_name = time() . "_" . basename($image['name']);
+    $target_path = "uploads/" . $image_name;
+
+    if (move_uploaded_file($image['tmp_name'], $target_path)) {
+        $insert = "INSERT INTO products(name, image_path, product_price, username) 
+                   VALUES('$product_name', '$target_path', '$product_price', '$username')";
+
+        if (mysqli_query($link, $insert)) {
+            echo "<script>
+                alert('Product added successfully');
+            </script>";
+            header("refresh:5");
+        } else {
+            echo "<script>
+                alert('Failed to add product');
+            </script>";
+        }
+    } else {
+        echo "<script>
+            alert('Failed to upload image');
+        </script>";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
