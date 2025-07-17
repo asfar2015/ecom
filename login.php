@@ -4,6 +4,10 @@ require_once "./config.php";
 
 session_start();
 
+if(!empty($_SESSION['id'])){
+    header('Location: index.php');
+}
+
 if(isset($_POST['submit'])){
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -18,14 +22,15 @@ if(isset($_POST['submit'])){
 
         if(password_verify($password,$row['password'])){
             $_SESSION['logged_in'] = true;
+            $_SESSION['id'] = $row['id'];
             $_SESSION['username'] = $row['username'];
             header('Location:index.php');
-        }else{
+        } else {
             echo "<script>
                 alert('password is incorrect')
                 </script>";
         }
-    }else{
+    } else {
         echo "<script>
                 alert('this user is not registered')
                 </script>";
@@ -80,7 +85,7 @@ if(isset($_POST['submit'])){
                 <button type="submit" name = "submit" class="btn btn-primary w-100 py-2 mt-2">Login</button>
             </form>
             <div class="mt-3 text-center">
-                <a href="register.php" class="text-decoration-none">Don't have an account? <span class="fw-semibold text-primary">Register</span></a>
+                <a href="registration.php" class="text-decoration-none">Don't have an account? <span class="fw-semibold text-primary">Register</span></a>
             </div>
         </div>
     </div>
